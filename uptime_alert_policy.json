@@ -1,0 +1,22 @@
+{
+  "displayName": "Bridge Master Downtime Alert",
+  "combiner": "OR",
+  "conditions": [
+    {
+      "displayName": "Uptime Check Failure",
+      "conditionThreshold": {
+        "filter": "metric.type=\"monitoring.googleapis.com/uptime_check/check_passed\" AND resource.type=\"uptime_url\"",
+        "duration": "60s",
+        "comparison": "COMPARISON_LT",
+        "thresholdValue": 1.0,
+        "trigger": {
+          "count": 1
+        }
+      }
+    }
+  ],
+  "notificationChannels": [
+    "projects/bridge-master-richard/notificationChannels/6134206244996220701"
+  ],
+  "enabled": true
+}
