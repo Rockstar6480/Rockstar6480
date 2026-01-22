@@ -140,7 +140,10 @@ class TestConfigurationIntegrity(unittest.TestCase):
         # Check alert policy
         with open('uptime_alert_policy.json', 'r') as f:
             policy = json.load(f)
-        notification_channel = policy['notificationChannels'][0]
+        notification_channels = policy.get('notificationChannels', [])
+        self.assertGreater(len(notification_channels), 0, 
+                          "Alert policy should have at least one notification channel")
+        notification_channel = notification_channels[0]
         self.assertIn('bridge-master-richard', notification_channel)
         
         # Check shell scripts

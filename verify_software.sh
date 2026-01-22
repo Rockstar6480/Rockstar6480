@@ -34,13 +34,13 @@ report_result $? "sovereign_dashboard.json is valid JSON"
 echo ""
 echo "2. Shell Script Syntax Validation"
 echo "--------------------------------------"
-bash -n gcloud_command.sh 2>&1
+bash -n gcloud_command.sh > /dev/null 2>&1
 report_result $? "gcloud_command.sh has valid syntax"
 
-bash -n gcloud_policy.sh 2>&1
+bash -n gcloud_policy.sh > /dev/null 2>&1
 report_result $? "gcloud_policy.sh has valid syntax"
 
-bash -n setup_monitoring.sh 2>&1
+bash -n setup_monitoring.sh > /dev/null 2>&1
 report_result $? "setup_monitoring.sh has valid syntax"
 
 echo ""
