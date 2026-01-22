@@ -79,5 +79,4 @@ def main():
     print("Audit complete. Review output for any issues.")
 
 if __name__ == "__main__":
-    main()</content>
-<parameter name="filePath">/workspaces/Rockstar6480/sovereign_audit_script.py
+    main()
